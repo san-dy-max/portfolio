@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Sandhya N — Cloud Computing and DevOps fresher portfolio.">
+  <title>Sandhya N | Cloud & DevOps Portfolio</title>
+  <style>
+    :root {
+      --bg: #0b1220;
+      --panel: #111c30;
+      --panel2: #14223a;
+      --text: #eef4ff;
+      --muted: #b4c1d8;
+      --accent: #66d9ef;
+      --accent2: #8b9cff;
+      --line: rgba(205, 222, 255, .14);
+      --shadow: 0 18px 50px rgba(0,0,0,.22);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: Inter, "Segoe UI", Arial, sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 85% 0%, rgba(102,217,239,.12), transparent 28rem),
+        radial-gradient(circle at 0% 35%, rgba(139,156,255,.10), transparent 24rem),
+        var(--bg);
+      line-height: 1.65;
+    }
+    a { color: inherit; text-decoration: none; }
+    .container { width: min(1100px, 91%); margin: auto; }
+    header {
+      position: sticky; top: 0; z-index: 10;
+      background: rgba(11,18,32,.88); backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--line);
+    }
+    nav { min-height: 70px; display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+    .logo { font-size: 1.2rem; font-weight: 800; letter-spacing: .04em; }
+    .logo span { color: var(--accent); }
+    .nav-links { display: flex; flex-wrap: wrap; gap: 22px; color: var(--muted); font-size: .93rem; }
+    .nav-links a:hover { color: var(--accent); }
+    .hero { min-height: 78vh; display: grid; grid-template-columns: 1.5fr .8fr; align-items: center; gap: 45px; padding: 85px 0 70px; }
+    .eyebrow { color: var(--accent); font-size: .86rem; font-weight: 700; letter-spacing: .15em; text-transform: uppercase; }
+    h1 { font-size: clamp(2.6rem, 6vw, 4.8rem); line-height: 1.08; letter-spacing: -.04em; margin: 15px 0 18px; }
+    h1 span { color: var(--accent); }
+    .hero p { max-width: 680px; color: var(--muted); font-size: 1.08rem; }
+    .actions { display: flex; flex-wrap: wrap; gap: 13px; margin-top: 28px; }
+    .btn { display: inline-flex; align-items: center; justify-content: center; border-radius: 10px; padding: 11px 18px; font-weight: 700; border: 1px solid var(--line); transition: transform .2s, background .2s; }
+    .btn:hover { transform: translateY(-2px); }
+    .btn-primary { color: #06111d; background: var(--accent); border-color: var(--accent); }
+    .btn-secondary { background: rgba(255,255,255,.03); }
+    .hero-card { background: linear-gradient(145deg, rgba(20,34,58,.96), rgba(17,28,48,.9)); border: 1px solid var(--line); border-radius: 24px; padding: 28px; box-shadow: var(--shadow); }
+    .avatar { width: 92px; height: 92px; border-radius: 25px; display: grid; place-items: center; font-size: 2rem; font-weight: 800; color: #081522; background: linear-gradient(135deg, var(--accent), var(--accent2)); margin-bottom: 20px; }
+    .hero-card h2 { font-size: 1.25rem; margin-bottom: 4px; }
+    .hero-card .sub { color: var(--muted); font-size: .93rem; margin-bottom: 20px; }
+    .quick-facts { display: grid; gap: 13px; }
+    .fact { border-top: 1px solid var(--line); padding-top: 11px; }
+    .fact strong { display: block; font-size: .8rem; color: var(--accent); text-transform: uppercase; letter-spacing: .08em; }
+    .fact span { color: var(--muted); font-size: .93rem; }
+    section { padding: 72px 0; }
+    .section-heading { margin-bottom: 28px; }
+    .section-heading .eyebrow { margin-bottom: 8px; }
+    h2.section-title { font-size: clamp(1.8rem, 4vw, 2.5rem); line-height: 1.2; }
+    .section-intro { color: var(--muted); max-width: 720px; margin-top: 10px; }
+    .about-grid { display: grid; grid-template-columns: 1.2fr .8fr; gap: 22px; }
+    .panel { background: rgba(17,28,48,.82); border: 1px solid var(--line); border-radius: 18px; padding: 25px; }
+    .panel p { color: var(--muted); }
+    .highlights { display: grid; gap: 14px; }
+    .highlight { padding: 15px; border-radius: 12px; background: rgba(255,255,255,.035); }
+    .highlight strong { display: block; font-size: 1.25rem; color: var(--accent); }
+    .highlight span { color: var(--muted); font-size: .9rem; }
+    .skills-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 17px; }
+    .skill-card h3 { margin-bottom: 13px; font-size: 1.05rem; }
+    .tags { display: flex; flex-wrap: wrap; gap: 8px; }
+    .tag { color: #dce8ff; background: rgba(102,217,239,.08); border: 1px solid rgba(102,217,239,.18); border-radius: 8px; padding: 5px 9px; font-size: .83rem; }
+    .projects-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
+    .project { display: flex; flex-direction: column; min-height: 255px; }
+    .project .number { color: var(--accent); font-weight: 800; font-size: .85rem; letter-spacing: .1em; }
+    .project h3 { font-size: 1.15rem; margin: 8px 0 10px; line-height: 1.35; }
+    .project p { color: var(--muted); font-size: .94rem; margin-bottom: 16px; }
+    .project .tags { margin-top: auto; }
+    .timeline { display: grid; gap: 18px; }
+    .timeline-item { border-left: 2px solid var(--accent2); padding: 3px 0 4px 20px; }
+    .timeline-item h3 { font-size: 1.08rem; }
+    .timeline-item .meta { color: var(--accent); font-size: .9rem; margin: 3px 0 8px; }
+    .timeline-item p { color: var(--muted); }
+    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+    .contact-links { display: grid; gap: 12px; margin-top: 17px; }
+    .contact-link { padding: 13px 15px; border: 1px solid var(--line); border-radius: 12px; background: rgba(255,255,255,.025); overflow-wrap: anywhere; }
+    .contact-link strong { display: block; color: var(--accent); font-size: .8rem; text-transform: uppercase; letter-spacing: .08em; }
+    .contact-link span { color: var(--muted); }
+    footer { border-top: 1px solid var(--line); padding: 24px 0; color: var(--muted); font-size: .88rem; text-align: center; }
+    .small-note { color: var(--muted); font-size: .84rem; margin-top: 13px; }
+    @media (max-width: 780px) {
+      .hero, .about-grid, .contact-grid { grid-template-columns: 1fr; }
+      .hero { min-height: auto; padding-top: 60px; }
+      .skills-grid { grid-template-columns: repeat(2, 1fr); }
+      .projects-grid { grid-template-columns: 1fr; }
+      .nav-links { gap: 12px; font-size: .83rem; }
+    }
+    @media (max-width: 520px) {
+      nav { align-items: flex-start; flex-direction: column; padding: 15px 0; }
+      .skills-grid { grid-template-columns: 1fr; }
+      section { padding: 55px 0; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav class="container" aria-label="Main navigation">
+      <a class="logo" href="#home">SANDHYA<span>.</span></a>
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#experience">Experience</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <div class="container">
+      <section class="hero" id="home">
+        <div>
+          <div class="eyebrow">Cloud Computing · DevOps · Linux</div>
+          <h1>Hi, I'm <span>Sandhya N.</span></h1>
+          <p>
+            An aspiring Cloud and DevOps professional with a background in Electronics and Communication Engineering.
+            I’m building practical skills in Linux, AWS, containers, CI/CD, and infrastructure automation, and looking
+            for an opportunity to learn, contribute, and grow.
+          </p>
+          <div class="actions">
+            <a class="btn btn-primary" href="#projects">Explore my projects ↓</a>
+            <a class="btn btn-secondary" href="#contact">Contact me</a>
+          </div>
+        </div>
+        <aside class="hero-card">
+          <div class="avatar" aria-hidden="true">SN</div>
+          <h2>Sandhya N</h2>
+          <div class="sub">Cloud Computing & DevOps · Fresher</div>
+          <div class="quick-facts">
+            <div class="fact"><strong>Education</strong><span>B.E. — Electronics & Communication Engineering</span></div>
+            <div class="fact"><strong>Graduation</strong><span>2026 · CGPA 7.5/10</span></div>
+            <div class="fact"><strong>Training</strong><span>Cloud Computing & DevOps — Besant Technologies</span></div>
+          </div>
+        </aside>
+      </section>
+
+      <section id="about">
+        <div class="section-heading">
+          <div class="eyebrow">A little about me</div>
+          <h2 class="section-title">Building a strong foundation in cloud and DevOps.</h2>
+          <p class="section-intro">I enjoy learning how applications are deployed, managed, monitored, and kept reliable.</p>
+        </div>
+        <div class="about-grid">
+          <div class="panel">
+            <p>
+              I have completed Cloud Computing and DevOps training and have been practising Linux administration,
+              AWS fundamentals, Git/GitHub, Docker, Kubernetes, Jenkins, Terraform, and Ansible. My goal is to begin
+              in an entry-level cloud, DevOps, Linux, or technical operations role and keep improving through hands-on work.
+            </p>
+            <p style="margin-top:14px">
+              My engineering background also includes academic projects involving IoT-based hazard detection and
+              a vehicle security system using Arduino and GSM.
+            </p>
+          </div>
+          <div class="highlights">
+            <div class="highlight"><strong>Cloud</strong><span>AWS services, networking and monitoring fundamentals</span></div>
+            <div class="highlight"><strong>Automation</strong><span>CI/CD concepts and Infrastructure as Code</span></div>
+            <div class="highlight"><strong>Linux</strong><span>Commands, users, permissions, services and troubleshooting</span></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="skills">
+        <div class="section-heading">
+          <div class="eyebrow">What I work with</div>
+          <h2 class="section-title">Technical skills</h2>
+          <p class="section-intro">Tools and concepts I have learned or practised during training and projects.</p>
+        </div>
+        <div class="skills-grid">
+          <div class="panel skill-card"><h3>Cloud & AWS</h3><div class="tags"><span class="tag">AWS EC2</span><span class="tag">S3</span><span class="tag">VPC</span><span class="tag">IAM</span><span class="tag">EKS</span><span class="tag">CloudWatch</span><span class="tag">CloudTrail</span></div></div>
+          <div class="panel skill-card"><h3>DevOps & CI/CD</h3><div class="tags"><span class="tag">Git</span><span class="tag">GitHub</span><span class="tag">Jenkins</span><span class="tag">Docker</span><span class="tag">Kubernetes</span><span class="tag">Terraform</span><span class="tag">Ansible</span></div></div>
+          <div class="panel skill-card"><h3>Linux & Scripting</h3><div class="tags"><span class="tag">Linux</span><span class="tag">Ubuntu</span><span class="tag">Shell commands</span><span class="tag">Permissions</span><span class="tag">SSH</span><span class="tag">Cron</span><span class="tag">Basic Python</span></div></div>
+          <div class="panel skill-card"><h3>Networking</h3><div class="tags"><span class="tag">VPC</span><span class="tag">Subnets</span><span class="tag">Internet Gateway</span><span class="tag">NAT Gateway</span><span class="tag">VPC Peering</span><span class="tag">Security Groups</span></div></div>
+          <div class="panel skill-card"><h3>Tools</h3><div class="tags"><span class="tag">PuTTY</span><span class="tag">Git Bash</span><span class="tag">VS Code</span><span class="tag">YAML</span></div></div>
+          <div class="panel skill-card"><h3>Professional strengths</h3><div class="tags"><span class="tag">Problem solving</span><span class="tag">Troubleshooting</span><span class="tag">Teamwork</span><span class="tag">Quick learning</span></div></div>
+        </div>
+      </section>
+
+      <section id="projects">
+        <div class="section-heading">
+          <div class="eyebrow">Hands-on learning</div>
+          <h2 class="section-title">Selected projects</h2>
+          <p class="section-intro">A selection of cloud/DevOps practice work and academic projects. Add repository links as you publish each project.</p>
+        </div>
+        <div class="projects-grid">
+          <article class="panel project">
+            <div class="number">PROJECT 01</div>
+            <h3>AWS Infrastructure with Terraform</h3>
+            <p>Practised defining AWS infrastructure as code, including networking resources and compute configuration, and using Terraform commands to initialize, validate, plan, and apply infrastructure changes.</p>
+            <div class="tags"><span class="tag">AWS</span><span class="tag">Terraform</span><span class="tag">VPC</span><span class="tag">EC2</span></div>
+          </article>
+          <article class="panel project">
+            <div class="number">PROJECT 02</div>
+            <h3>Jenkins CI/CD Pipeline</h3>
+            <p>Worked on a pipeline workflow connecting source control and application build/deployment steps, learning how CI/CD helps make software delivery more repeatable.</p>
+            <div class="tags"><span class="tag">Jenkins</span><span class="tag">Git</span><span class="tag">Docker</span><span class="tag">CI/CD</span></div>
+          </article>
+          <article class="panel project">
+            <div class="number">PROJECT 03</div>
+            <h3>Three-Tier Web Application on Kubernetes</h3>
+            <p>Explored deployment of application components using containers and Kubernetes, with AWS EKS and supporting DevOps tools for deployment and monitoring workflows.</p>
+            <div class="tags"><span class="tag">AWS EKS</span><span class="tag">Kubernetes</span><span class="tag">Docker</span><span class="tag">CloudWatch</span></div>
+          </article>
+          <article class="panel project">
+            <div class="number">ACADEMIC PROJECT</div>
+            <h3>Smart IoT Hazard Detection and Automated Door System</h3>
+            <p>Developed an IoT-based academic project using a microcontroller, sensor, buzzer, LEDs, fan, and servo mechanisms to detect hazardous conditions and trigger automated responses.</p>
+            <div class="tags"><span class="tag">ESP32</span><span class="tag">IoT</span><span class="tag">Sensors</span><span class="tag">Automation</span></div>
+          </article>
+          <article class="panel project">
+            <div class="number">ACADEMIC MINI PROJECT</div>
+            <h3>Bike and Car Security System Using Arduino GSM</h3>
+            <p>Designed a vehicle security concept using Arduino and a GSM module to support alerts for security-related events.</p>
+            <div class="tags"><span class="tag">Arduino</span><span class="tag">GSM</span><span class="tag">Embedded Systems</span></div>
+          </article>
+        </div>
+      </section>
+
+      <section id="experience">
+        <div class="section-heading">
+          <div class="eyebrow">Education & experience</div>
+          <h2 class="section-title">My journey so far</h2>
+        </div>
+        <div class="panel timeline">
+          <div class="timeline-item">
+            <h3>Cloud Computing & DevOps Intern</h3>
+            <div class="meta">BDreamz Global Solutions Private Limited</div>
+            <p>Hands-on training and practice in Linux, AWS fundamentals, DevOps tools, automation concepts, and application deployment workflows.</p>
+          </div>
+          <div class="timeline-item">
+            <h3>Bachelor of Engineering — Electronics & Communication Engineering</h3>
+            <div class="meta">Brundavan College of Engineering · 2026 · CGPA 7.5/10</div>
+            <p>Engineering studies with academic projects in IoT and vehicle security systems.</p>
+          </div>
+          <div class="timeline-item">
+            <h3>Cloud Computing & DevOps Training</h3>
+            <div class="meta">Besant Technologies · Completed</div>
+            <p>Training in cloud and DevOps fundamentals, including Linux, AWS, containers, CI/CD and infrastructure tools.</p>
+          </div>
+          <div class="timeline-item">
+            <h3>FATP Operator</h3>
+            <div class="meta">Tata Electronic System Solution</div>
+            <p>Experience following standard operating procedures and quality and safety practices in a production environment.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact">
+        <div class="section-heading">
+          <div class="eyebrow">Let's connect</div>
+          <h2 class="section-title">Contact me</h2>
+          <p class="section-intro">I’m interested in entry-level opportunities in Cloud Computing, DevOps, Linux/System Administration, and Technical Support.</p>
+        </div>
+        <div class="contact-grid">
+          <div class="panel">
+            <h3>Get in touch</h3>
+            <p style="color:var(--muted); margin-top:8px">Feel free to contact me about opportunities, projects, or collaboration.</p>
+            <div class="contact-links">
+              <a class="contact-link" href="mailto:sandhyanagraj2004@gmail.com"><strong>Email</strong><span>sandhyanagraj2004@gmail.com</span></a>
+              <a class="contact-link" href="tel:+919740930718"><strong>Phone</strong><span>+91 9740930718</span></a>
+              <a class="contact-link" href="https://www.linkedin.com/in/sandhya-n-0a5982269/" target="_blank" rel="noopener"><strong>LinkedIn</strong><span>linkedin.com/in/sandhya-n-0a5982269</span></a>
+              <a class="contact-link" href="https://github.com/san-dy-max" target="_blank" rel="noopener"><strong>GitHub</strong><span>github.com/san-dy-max</span></a>
+            </div>
+          </div>
+          <div class="panel">
+            <h3>Portfolio website</h3>
+            <p style="color:var(--muted); margin-top:8px">This site is ready to publish. Once it is hosted, add its final URL to your resume and job profiles.</p>
+            <p class="small-note">Note: Project descriptions are written as portfolio summaries. Before publishing, make sure each project reflects what you personally completed and add GitHub repository links where available.</p>
+            <div class="actions"><a class="btn btn-primary" href="https://github.com/san-dy-max" target="_blank" rel="noopener">View GitHub profile ↗</a></div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+  <footer><div class="container">© <span id="year"></span> Sandhya N · Cloud Computing & DevOps Portfolio</div></footer>
+  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+</body>
+</html>
